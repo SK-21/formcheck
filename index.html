@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Mailto demo by mplungjan</title>
+<script type='text/javascript'>
+window.onload=function() {
+  document.getElementById("e_form").onsubmit=function() {
+    var e_add = this.emadd.value,
+        subject1=this.subj.value,
+        body=this.body.value,
+        loc="mailto:"+e_add+"?subject="+encodeURIComponent(subject1)+"&body="+body;
+    window.location=loc;
+    return false; // cancel submit
+  }
+}
+</script>
+</head>
+<body>
+  <form id="e_form" enctype="text/plain">
+  <div id="para1">  
+    <p>Please select which lab you are in: </p>            
+    <select name="subj">
+      <option value="Lab_1 Support">Lab 1</option>
+      <option value="Lab_2 Support">Lab 2</option>
+      <option value="Lab_3 Support">Lab 3</option>
+      <option value="Lab_4 Support">Lab 4</option>
+      <option value="Lab_5 Support">Lab 5</option>
+    </select>
+  </div>       
+  <div id="para2">
+    <p>Please select which support you require:</p>
+    <select name="emadd">
+      <option value="re@abc.com">RE Support</option>
+      <option value="admin@abc.com">Admin Support</option>
+      <option value="system@abc.com">System Support</option>
+      <option value="hwsw@abc.com">H/W &amp; S/W Support</option>
+    </select>
+    <input name="body"  type="hidden" value="I require support now!" />
+  </div>
+  <input type="submit" Value="Send"  />
+</form>
+</body>
+</html>
