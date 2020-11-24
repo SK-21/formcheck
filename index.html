@@ -4,27 +4,12 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>Mailto demo by mplungjan</title>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!--<script type='text/javascript'>
-window.onload=function() {
-  document.getElementById("e_form").onsubmit=function() {
-    var e_add = this.emadd.value,
-        subject1=this.subj.value,
-        body=this.body.value,
-        loc="mailto:"+e_add+"?subject="+encodeURIComponent(subject1)+"&body="+body;
-    window.location=loc;
-    return false; // cancel submit
-  }
-}
-</script>-->
 	
-	<script>function checkAndSubmit(formID) {
-  a=prompt("Input");
-  if(a=="ok"){
-    document.getElementById(formID).submit();
-  }
-}
-$('.questionnaire').on('submit', function(e) {
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script>
+		$('.questionnaire').on('submit', function(e) {
 
   var messageBody = '';
   $.each($('.questionnaire').serializeArray(), function(i, field) {
@@ -36,114 +21,12 @@ $('.questionnaire').on('submit', function(e) {
   e.preventDefault();
   $('.mail')[0].click()
 
-});	
+});
 	</script>
+
 </head>
 <body>
-	
-	<!--<form action="mailto:user@example.com" method="get">
-<input name="subject" type="hidden" value="Message Title">
-
-Feedback:<br/>
-<textarea name=body cols="40" >
-Please share your thoughts here
-and then choose Send Feedback.
-</textarea>
-
-<input type="submit" value="Send Feedback">
-</form>
-	
-	<!--
-	
-	<form id="contact_form" action="mailto:example@somewhere.com" method="get">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" placeholder="Your name.."><br>
-
-      <label for="email">Email</label>
-      <input type="text" id="email" name="email" placeholder="Your email.."><br>
-
-      <label for="phone">Phone</label>
-      <input type="text" id="phone" name="phone" placeholder="Your phone number.."><br>
-
-      <label for="subject">Subject</label>
-      <input type="text" id="subject" name="subject" placeholder="The subject of the message.."><br>
-
-      <label for="subject">Question</label>
-      <textarea id="question" name="question" placeholder="Write your question here.."></textarea><br>
-
-      <!-- <input type="button" value="Submit" onclick="checkAndSubmit('contact_form')"> 
-      <input type="submit" value="Submit">
-      <input type="reset" value="Reset">
-    </form>
-	
-	
-	
-	
-	<!--
-  <form id="e_form" enctype="text/plain">
-  <div id="para1">  
-    <p>Please select which lab you are in: </p>            
-    <select name="subj">
-      <option value="Lab_1 Support">Lab 1</option>
-      <option value="Lab_2 Support">Lab 2</option>
-      <option value="Lab_3 Support">Lab 3</option>
-      <option value="Lab_4 Support">Lab 4</option>
-      <option value="Lab_5 Support">Lab 5</option>
-    </select>
-  </div>       
-  <div id="para2">
-    <p>Please select which support you require:</p>
-    <select name="emadd">
-      <option value="re@abc.com">RE Support</option>
-      <option value="admin@abc.com">Admin Support</option>
-      <option value="system@abc.com">System Support</option>
-      <option value="hwsw@abc.com">H/W &amp; S/W Support</option>
-    </select>
-    <input name="body"  type="hidden" value="I require support now!" />
-  </div>
-  <input type="submit" Value="Send"  />
-    -->
-<!--<form action="mailto:contact@thevictorgaribay.com?subject=Message for Victor Garibay" method="get" enctype="text/plain" 
-							class="contact_form" id="contact_form" 
-							>
-								<div class="returnmessage" data-success="Your message has been received, We will contact you soon."></div>
-								<div class="first">
-									<ul>
-										<li>
-											<input id="name" type="text" placeholder="Name" name="name" required>
-										</li>
-										<li>
-											<input id="email" type="text" placeholder="Email" name="email" required>
-										</li>
-									</ul>
-								</div>
-								<div class="last">
-									<textarea id="message" placeholder="Message" name="Message" required></textarea>
-								</div>
-							
-								<div class="btn" data-position="left">
-									<input  type="submit" value="Submit" class="btn submit"  >
-									<!--<a id="send_message" href="#">
-										<span>Send Message</span>
-									</a>-->
-							<!--	</div>
-							
-								
-							</form>
-  
-  <div class="form">
-  <form>
-    <label>Name:</label>
-    <input type="text" name="yourName"><br>
-    <label>Email:</label>
-    <input type="email" name="yourEmail"><br>
-    <label>Message:</label><br>
-    <textarea rows="10" cols="30" name="yourMessage"></textarea><br>
-    <a target="_blank" class="button"  href="mailto:...@gmail.com" id="mailtolink"><span>Submit</span></a>
-  </form>
-</div>-->
-	
-<form class="questionnaire" target="_top" method="post" enctype="text/plain">
+	<form class="questionnaire" target="_top" method="post" enctype="text/plain">
 
 
   First name:<br>
@@ -155,19 +38,6 @@ and then choose Send Feedback.
 </form>
 
 <a class="mail" href="mailto:someone@example.com?Subject=Hello%20again" target="_top" style="display: none;">Send Mail</a>
-</body>
-</html><!--
-<script typr="text/javascript">window.addEventListener("load", function() {
-  document.getElementById("mailtolink").addEventListener("click", function(e) {
-    e.preventDefault() // remove after testing
-    let url = new URL(this.href);
-    const name = document.querySelector("[name=yourName]").value.trim();
-    const email = document.querySelector("[name=yourEmail]").value.trim();
-    const message = document.querySelector("[name=yourMessage]").value.trim();
-    url.searchParams.set("from", email);
-    url.searchParams.set("subject", "Message from " + (document.title || location.hostname))
-    url.searchParams.set("body", name + " said " + message)
-    this.href=url;
-    console.log(url)
-  })
-});</script>
+	
+	</body>
+	</head>
