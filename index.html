@@ -4,6 +4,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>Mailto demo by mplungjan</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type='text/javascript'>
 window.onload=function() {
   document.getElementById("e_form").onsubmit=function() {
@@ -22,7 +23,21 @@ window.onload=function() {
   if(a=="ok"){
     document.getElementById(formID).submit();
   }
-}</script>
+}
+$('.questionnaire').on('submit', function(e) {
+
+  var messageBody = '';
+  $.each($('.questionnaire').serializeArray(), function(i, field) {
+    messageBody += field.name + ": " + field.value + '%0D%0A';
+  });
+
+  var hreflink = "mailto:carl@cuttingedgelighting.com?Subject=New%20Vendor&body=" + messageBody;
+  $('.mail').attr("href", hreflink);
+  e.preventDefault();
+  $('.mail')[0].click()
+
+});	
+	</script>
 </head>
 <body>
 	
@@ -127,6 +142,19 @@ and then choose Send Feedback.
     <a target="_blank" class="button"  href="mailto:...@gmail.com" id="mailtolink"><span>Submit</span></a>
   </form>
 </div>-->
+	
+<form class="questionnaire" target="_top" method="post" enctype="text/plain">
+
+
+  First name:<br>
+  <input type="text" name="firstname" value="Foo">
+  <br> Last name:<br>
+  <input type="text" name="lastname" value="bar">
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<a class="mail" href="mailto:someone@example.com?Subject=Hello%20again" target="_top" style="display: none;">Send Mail</a>
 </body>
 </html><!--
 <script typr="text/javascript">window.addEventListener("load", function() {
