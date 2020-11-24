@@ -16,8 +16,42 @@ window.onload=function() {
   }
 }
 </script>
+	
+	<script>function checkAndSubmit(formID) {
+  a=prompt("Input");
+  if(a=="ok"){
+    document.getElementById(formID).submit();
+  }
+}</script>
 </head>
 <body>
+	
+	
+	<form id="contact_form" action="mailto:example@somewhere.com" method="get">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name.."><br>
+
+      <label for="email">Email</label>
+      <input type="text" id="email" name="email" placeholder="Your email.."><br>
+
+      <label for="phone">Phone</label>
+      <input type="text" id="phone" name="phone" placeholder="Your phone number.."><br>
+
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" name="subject" placeholder="The subject of the message.."><br>
+
+      <label for="subject">Question</label>
+      <textarea id="question" name="question" placeholder="Write your question here.."></textarea><br>
+
+      <!-- <input type="button" value="Submit" onclick="checkAndSubmit('contact_form')"> -->
+      <input type="submit" value="Submit">
+      <input type="reset" value="Reset">
+    </form>
+	
+	
+	
+	
+	
   <form id="e_form" enctype="text/plain">
   <div id="para1">  
     <p>Please select which lab you are in: </p>            
