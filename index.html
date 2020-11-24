@@ -41,19 +41,33 @@ window.onload=function() {
   </div>
   <input type="submit" Value="Send"  />
     
-    <div class="form">
-  <form>
-    <label>Name:</label>
-    <input type="text" name="yourName"><br>
-    <label>Email:</label>
-    <input type="email" name="yourEmail"><br>
-    <label>Message:</label><br>
-    <textarea rows="10" cols="30" name="yourMessage"></textarea><br>
-    <a target="_blank" class="button"  href="mailto:sk@gmail.com" id="mailtolink"><span>Submit</span></a>
-  </form>
-</div>
-    
-</form>
+<form action="mailto:contact@thevictorgaribay.com?subject=Message for Victor Garibay" method="get" enctype="text/plain" 
+							class="contact_form" id="contact_form" 
+							>
+								<div class="returnmessage" data-success="Your message has been received, We will contact you soon."></div>
+								<div class="first">
+									<ul>
+										<li>
+											<input id="name" type="text" placeholder="Name" name="name" required>
+										</li>
+										<li>
+											<input id="email" type="text" placeholder="Email" name="email" required>
+										</li>
+									</ul>
+								</div>
+								<div class="last">
+									<textarea id="message" placeholder="Message" name="Message" required></textarea>
+								</div>
+							
+								<div class="btn" data-position="left">
+									<input  type="submit" value="Submit" class="btn submit"  >
+									<!--<a id="send_message" href="#">
+										<span>Send Message</span>
+									</a>-->
+								</div>
+							
+								
+							</form>
   
   <div class="form">
   <form>
