@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>Mailto demo by mplungjan</title>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type='text/javascript'>
+<!--<script type='text/javascript'>
 window.onload=function() {
   document.getElementById("e_form").onsubmit=function() {
     var e_add = this.emadd.value,
@@ -16,7 +16,7 @@ window.onload=function() {
     return false; // cancel submit
   }
 }
-</script>
+</script>-->
 	
 	<script>function checkAndSubmit(formID) {
   a=prompt("Input");
@@ -41,7 +41,7 @@ $('.questionnaire').on('submit', function(e) {
 </head>
 <body>
 	
-	<form action="mailto:user@example.com" method="get">
+	<!--<form action="mailto:user@example.com" method="get">
 <input name="subject" type="hidden" value="Message Title">
 
 Feedback:<br/>
@@ -71,7 +71,7 @@ and then choose Send Feedback.
       <label for="subject">Question</label>
       <textarea id="question" name="question" placeholder="Write your question here.."></textarea><br>
 
-      <!-- <input type="button" value="Submit" onclick="checkAndSubmit('contact_form')"> -->
+      <!-- <input type="button" value="Submit" onclick="checkAndSubmit('contact_form')"> 
       <input type="submit" value="Submit">
       <input type="reset" value="Reset">
     </form>
